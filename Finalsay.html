@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victoria • My Side of Our Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    .card {
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200') center/cover no-repeat;
+    }
+    .story-text {
+      font-size: 1.13rem;
+      line-height: 1.9;
+    }
+
+    /* Slider Styles */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+    }
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgb(245 158 11 / 0.4);
+      transition: all 0.3s;
+    }
+    .slider-dot-active {
+      background-color: rgb(245 158 11);
+      transform: scale(1.3);
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200 font-sans">
+
+  <!-- Background Music -->
+  <div class="fixed bottom-6 left-6 right-6 z-50 max-w-md mx-auto">
+    <button onclick="toggleMusic()" id="musicBtn"
+      class="bg-amber-900/30 hover:bg-amber-800/40 backdrop-blur-md text-amber-100 px-5 py-3 rounded-2xl flex items-center gap-3 shadow-xl transition-all w-full text-sm">
+      <i class="fa-solid fa-music"></i>
+      <span id="musicText">Tap to Play the background Tune</span>
+    </button>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="b4.mp3" type="audio/mpeg">
+    <!-- Replace the link above with a softer instrumental / piano song you like -->
+  </audio>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-screen flex items-center justify-center text-center px-6" style="background-image : url('e1.jpg'); background-size : cover; ">
+    <div class="max-w-2xl">
+      <h1 class="text-5xl md:text-7xl font-light tracking-tight mb-6 text-amber-100">Victoria,</h1>
+      <p class="text-2xl md:text-3xl text-amber-200/90 mb-6">A Gentle Writing From My Heart</p>
+      <p class="text-lg text-zinc-400">A gentle tune plays softly as you read...</p>
+      <div class="mt-20">
+        <a href="#journey" class="inline-flex items-center gap-3 text-amber-300 hover:text-amber-200 transition-all">
+          <span class="tracking-widest text-sm">BEGIN READING</span>
+          <i class="fa-solid fa-arrow-down animate-bounce"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="journey" class="max-w-3xl mx-auto px-6 py-20 space-y-24">
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">The Genesis</h2>
+      <p class="story-text text-zinc-300">
+        It started when I saw your picture on a friend’s status. I began asking about you and later learned you were a friend of my good friend Christine.
+      </p>
+      <div class="mt-10">
+        <p class="text-amber-400/70 text-sm mb-3">"A picture of you that started it all"</p>
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="p1.jpg" class="w-full rounded-xl shadow-2xl" alt="The picture that started it all">
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">The Foundation</h2>
+      <p class="story-text text-zinc-300">
+        I got to know your name from asking a few friends. I learned you were Rwandan or from the western region and that you seemed composed on compound, someone who seemed to feel herself and also I found out you were good friends with people I knew (Christine and Denis). This made me even more curious, so I went to Christine to learn more about you.
+      </p>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l18.jpg" class="w-full rounded-xl shadow-2xl" alt="The Soft Head Starts">
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">The First Eye On</h2>
+      <p class="story-text text-zinc-300">
+        The day I met you and Christine, I noticed you were a decent, smartly dressed girl. At that point, my interest was still mostly curiosity.
+      </p>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <video controls class="w-full rounded-xl shadow-2xl">
+            <source src="v1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Emotional Attraction Starts</h2>
+      <p class="story-text text-zinc-300">
+        From what Christine told me about you and how pleasant you were to be around, I began thinking about that. When we first met, I found you physically fine or normal, I didn’t get that initial physical attraction about you (idk perhaps I was mostly a bit nervous and didn't pay attention to anything else) however emotional interest towards you had started.
+      </p>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="h9.jpg" class="w-full rounded-xl shadow-2xl" alt="How Feelings Started">
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Feelings Develop</h2>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l7.jpg" class="w-full rounded-xl shadow-2xl" alt="Gradually, Over Time">
+        </div>
+      </div>
+      <p class="story-text text-zinc-300">
+        Over time, I slowly started getting fond of you. Back then I can say, it was more of mixed excitedness, curiosity and a bit of self pressure.
+      </p>
+      
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Those Few Walks</h2>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="w1.jpg" class="w-full rounded-xl shadow-2xl" alt="Those Few Walks">
+        </div>
+      </div>
+      <p class="story-text text-zinc-300">
+        Those few walks with you, however simple they were,they
+        felt significant to me as I started seeing who you are and I could see what Christine had told me about you being true ,you were a free person indeed ,I was getting more comfortable around you and also you were this person who I never expected to walk cause remember you had someone who always picked you up(boda guy),so leaving the boda and walking that long journey to where I boarded from made me see how considerate a person you are and also to some small extent it made me think ,maybe you too had had a subtle interest. So they became one of those few moments or memories I got to cherish a lot in my mind.
+      </p>
+      
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">The Intensity</h2>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l6.jpg" class="w-full rounded-xl shadow-2xl" alt="The Intensity">
+        </div>
+      </div>
+      <p class="story-text text-zinc-300">
+        Those few interactions made you someone important to me. My mind began seeking validation. Whenever you told me to move on, it could hit me hard — It subconsciously felt like I was losing who you meant to me. That’s why I ended up writing long texts. I was trying to protect the meaning you had come to hold in my life.
+      </p>
+      
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Emotional Addiction</h2>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l12.jpg" class="w-full rounded-xl shadow-2xl" alt="Emotional Addiction">
+        </div>
+      </div><br>
+      <p class="story-text text-zinc-300">
+        Overtime,I was emotionally getting more into your ways. The more you told me to stop, or move on, is the more I felt you were rare. And what seemed as your defences made you very emotionally attractive to me. Whenever you refused to send me your pics, I saw that as self respect and I liked you the more. Whenever you said you weren't available, I perceived that as loyalty, which made me like you more. Whenever you said you leave things to GOD, I saw that as godliness, which made me like you even more. So I got more emotionally addicted to your ways.
+      </p>
+      
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Physical Attraction</h2>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l10_1.jpg" class="w-full rounded-xl shadow-2xl" alt="Physical Attraction">
+        </div>
+      </div>
+      <p class="story-text text-zinc-300">
+        This developed much later — only after you had already become meaningful to me. When I looked at your pictures, I would smile. What once seemed just “fine or normal” had become truly beautiful in my eyes.
+      </p>
+      <div class="mt-10">
+        
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="h12.png" class="w-full rounded-xl shadow-2xl" alt="Physical Attraction">
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">The Distance</h2>
+      <p class="story-text text-zinc-300">
+        I didn't realize that this kept on distancing us gradually.
+      </p>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l14.jpg" class="w-full rounded-xl shadow-2xl" alt="The Distance">
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Wrong Message</h2>
+      <p class="story-text text-zinc-300">
+        I think I unintentionally sent to you the wrong message or picture of who I am. I didn’t (and don't) like you because I'm demanding anything from you. I liked you for who you slowly became to me. I just didn't express it rightly.
+      </p>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l15.jpg" class="w-full rounded-xl shadow-2xl" alt="Wrong Message">
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">The Silence</h2>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l3_1.jpg" class="w-full rounded-xl shadow-2xl" alt="The Silence">
+        </div>
+      </div><br>
+      <p class="story-text text-zinc-300">
+        As time passed, I realized I wasn’t listening to you properly. Your presence in our chats started fading — messages left on delivered for days, sometimes on read, which wasn’t your earlier pattern. When you blocked me, I tried to reconnect right away with apologies on my other number, even though I felt you probably only needed space but I couldn’t stand the guilt like urge as you blocking me was something I least least expected from you ,so you doing it must have been really serious , so I urged to explain myself.After I tried to keep things platonic(on the other new number I used), but your low engagement continued. Eventually, I decided to stop, as uncomfortable as it was for me.
+‎I didn’t expect you to text me again on the other number(original). I had slowly been getting used to the distance, though not a day passed when I didn't have a thought about you(even if their intensity was starting to fade over time). When you texted again on the one you had blocked, I was pleasantly surprised and warmed up.</p>
+      
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">My Intentions</h2>
+      <div class="mt-10">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l4.jpg" class="w-full rounded-xl shadow-2xl" alt="My Intentions">
+        </div>
+      </div><br>
+      <p class="story-text text-zinc-300">
+        I believe the way i got to like you was one of the most mysterious ways one can say. I didn't have any intentions, but I gave deep meaning to even our smallest interactions. That’s probably why I came across as very annoying to you — to me, you were never just any girl. You had become so much more. This created a mismatch between us because the level at which I saw you wasn’t the same in your eyes that you saw me(something very normal).
+      </p>
+      
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Behind the Scenes</h2>
+       <div class="mt-8">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l1.jpg" class="w-full rounded-xl shadow-2xl" alt="">
+        </div>
+      </div><br>
+      <p class="story-text text-zinc-300">
+        I could always text you, but behind the scenes it wasn’t easy for me—it was often a bit aching.As a way of expressing what I felt and thought,sometimes I wrote digital notes, edited things or videos, made songs etc(some you saw , many you didn't). I also desired and tried to understand you better. I knew you weren’t available, but that wasn’t really the issue for me. I was always okay with it. To me, you were someone I liked, cared about, saw differently in my eyes, respected, and was okay with who you had expressed yourself as to me.
+At the same time, some of your reactions—though they may have felt normal or natural to you—sometimes ached.
+There were moments I did things not to harm or annoy you, but you went suddenly berserk , and maybe you had your reasons. Still, my actions came from what you meant to me , most time wanting to be playfull or joking.
+I don’t remove the blame from myself. I can say I was somewhat blinded by how I saw you, and because of that, I didn’t always express myself in the best way. So I don’t place any blame on you. </p>
+     
+      <br>
+      <p class="text-red-400/70 text-sm mb-2">This is one of your reactions that drained me most , I had only playfully put your picture on my dp ,it was only you who could see it ,it wasnt even fully showing</p>
+       <div class="mt-8">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="s.jpg" class="w-full rounded-xl shadow-2xl" alt="">
+        </div>
+      </div>
+      <br><br>
+      <p class="text-green-400/70 text-sm mb-8">SOME OF THE STUFF I USED TO DO MOSTLY TO WRITE OR EXPRESS MY THOUGHTS AT THAT MOMENT</p> 
+      <div class="mt-10 space-y-8">
+        <div>
+          <p class="text-cyan-400/70 text-sm mb-5">Please Pause The Background tune if you are to play these songs</p>
+          <p class="text-amber-400/70 text-sm mb-3">Song called "Victoria my love"</p>
+          <audio controls class="w-full">
+            <source src="b1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div>
+          <p class="text-amber-400/70 text-sm mb-3">song called "Rwandan Pearl"</p>
+          <audio controls class="w-full">
+            <source src="b2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div>
+          <p class="text-amber-400/70 text-sm mb-3">A screenshot of some of the digital notes I used to take</p>
+          <div class="bg-zinc-800 rounded-2xl p-3">
+            <img src="h5.jpg" class="w-full rounded-xl shadow-2xl" alt="Behind the Scenes">
+          </div><br>
+          <p class="text-cyan-400/70 text-sm mb-5">Simple writings</p>
+          <div class="bg-zinc-800 rounded-2xl p-3">
+            <img src="ed.jpg" class="w-full rounded-xl shadow-2xl" alt="Behind the Scenes">
+          </div>
+        </div>
+        <p class="text-cyan-400/70 text-sm mb-1">You can resume the background tune incase you're done playing those songs</p>
+      </div>
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Currently</h2>
+       <div class="mt-8">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l20.jpg" class="w-full rounded-xl shadow-2xl" alt="">
+        </div>
+      </div>
+      <p class="story-text text-zinc-300">
+        ‎‎As of now, I can say I like you emotionally, and I may have used the wrong words before when I said “I love you.” What I really meant is that I admire you—your style the way you carry yourself. Your principles didn’t push me away; instead, they made you more attractive to me because they align with the kind of person I naturally can resonate with.
+‎I’m someone who values loyalty. When I care, I give my all, and I'm cautious about being broken or breaking someone so I would want someone I can trust and all that privacy and respect you had(and have)for your friends that you showed when I asked you for their numbers or your pics, this made you someone I can trust in my eyes. I prefer something meaningful rather than something short-term experimental stuff—someone who encourages me in my goals and reminds me of my Creator, because I don’t want to drift away from Him, and someone who understands and I can trust.  Many things about you reflected these qualities.
+‎Forexample
+‎I remember the time I annoyed you( when you told me about that relationship situation back in P7). At first, you were really upset.. But later that same day, during that same walk, you smiled and laughed again as we talked. Something that amazed me,I realized you get mad when someone exceeds their limit but don’t hold onto it for long. Another thing about you that I liked, that understanding nature.
+‎So yes, I used the wrong phrase before that “I love you”—it was admiration. It would be unrealistic to call it love without shared experiences or a mutual connection. Right now, I can honestly say I like you emotionally, and I truly admire many things about you.
+‎</p>
+      
+     
+    </div>
+
+    <div class="card bg-zinc-900/70 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-zinc-800">
+      <h2 class="text-amber-300 text-3xl font-light mb-8">Truths</h2>
+       <div class="mt-8">
+        <div class="bg-zinc-800 rounded-2xl p-3">
+          <img src="l2.jpg" class="w-full rounded-xl shadow-2xl" alt="">
+        </div>
+      </div>
+      <p class="story-text text-zinc-300">
+        Even though all that happened but the truth is I myself I ain't ready or not in a position where I'd want a relationship, this is cause, as I said I dreamed of a meaningful connection, where I wanted to first be someone with a direction. I don't want a girl that I love to be my focus or center, to me that feels distractive and later boring. I want her to instead be a beautiful addition  to my life, someone who won't replace GOD or my goals, but instead one who'll help me draw closer to Him and peacefully continue pursuing my goals and purpose, someone I can make memories with, later on even marry (if that's where it leads).
+      </p>
+      
+      
+    </div>
+
+    <div class="card bg-gradient-to-br from-amber-900/30 to-zinc-900 rounded-3xl p-12 md:p-20 border border-amber-800/30">
+      <h2 class="text-4xl font-light mb-10 text-amber-100 text-center">Why This? & In Conclusion</h2>
+      <p class="story-text text-zinc-300 max-w-2xl mx-auto text-center">
+        I noticed the silence and wanted a better way to communicate everything I needed you to know — one that wouldn’t feel overwhelming on WhatsApp. So I created this page.<br><br>
+        <div class="mt-10">
+        <p class="text-amber-400/70 text-sm mb-4 text-center">The Compositor</p>
+        <div class="slider bg-zinc-800 rounded-3xl p-3" id="slider-currently">
+          <div class="slides" id="slides-currently">
+            <div class="slide"><img src="a1.jpg" alt="Currently 1"></div>
+            <div class="slide"><img src="h6.jpg" alt="Currently 2"></div>
+            <div class="slide"><img src="a2.jpg" alt="Currently 3"></div>
+            <div class="slide"><img src="a3.jpg" alt="Truths 3"></div>
+          </div>
+          <div class="flex justify-center gap-2 mt-6" id="dots-currently"></div>
+        </div>
+      </div><br><br>
+        <h6 class="text-amber-400/70 text-sm mb-4 text-center">FINAL CONCLUSION</h6>
+        Victoria, overtime I've understood that when it comes to love or relationships, the choice is not entirely yours, you seek from God's guidance which is fine. I've never liked you cause I wanted you to like me back, and for whatever God decides, it's what I'm also free with. Just like you He's also my Loving Father that I desire to serve in how He planned me to serve Him<br><br>
+        I'd like us to know each other more when the time is right — when you are free and ready. But as of now, it’s completely fine if us not interacting , brings you peace and safety.<br><br>
+        <div class="mt-10">
+        <p class="text-amber-400/70 text-sm mb-4 text-center">Regards</p>
+        <div class="slider bg-zinc-800 rounded-3xl p-3" id="slider-final">
+          <div class="slides" id="slides-final">
+            <div class="slide"><img src="h1.jpg" alt="Conclusion 1"></div>
+            <div class="slide"><img src="en.jpg" alt="Conclusion 2"></div>
+          </div>
+          <div class="flex justify-center gap-2 mt-6" id="dots-final"></div>
+        </div>
+      </div>
+        
+        Thank you for taking the time to read this.
+      </p>
+      <p class="text-center mt-12 text-amber-300/70">
+        With respect and an open heart,<br>
+        Fredrick_M<br>
+        May 2026
+      </p>
+    </div>
+
+  </div>
+   
+
+  <footer class="text-center py-16 text-zinc-500 text-sm relative z-10">
+    Made with honesty • For your eyes only
+  </footer>
+
+  <script>
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicText');
+      if (music.paused) {
+        music.play();
+        btn.textContent = "Pause Music";
+      } else {
+        music.pause();
+        btn.textContent = "Play Gentle Instrumental";
+      }
+    }
+
+    // Simple Auto Slider
+    function createSlider(sliderId, slidesId, dotsId) {
+      const slider = document.getElementById(sliderId);
+      const slidesContainer = document.getElementById(slidesId);
+      const slides = slidesContainer.children;
+      const totalSlides = slides.length;
+      let currentIndex = 0;
+      let interval;
+
+      // Create dots
+      const dotsContainer = document.getElementById(dotsId);
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `slider-dot cursor-pointer`;
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+      const dots = dotsContainer.children;
+
+      function updateDots() {
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].classList.toggle('slider-dot-active', i === currentIndex);
+        }
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+      }
+
+      // Auto slide every 4 seconds
+      function startAutoSlide() {
+        interval = setInterval(nextSlide, 4000);
+      }
+
+      // Pause on hover
+      slider.addEventListener('mouseenter', () => clearInterval(interval));
+      slider.addEventListener('mouseleave', startAutoSlide);
+
+      // Initialize
+      updateDots();
+      startAutoSlide();
+    }
+
+    // Initialize sliders
+    window.onload = function() {
+      createSlider('slider-currently', 'slides-currently', 'dots-currently');
+      createSlider('slider-final', 'slides-final', 'dots-final');
+    };
+  </script>
+</body>
+</html>
